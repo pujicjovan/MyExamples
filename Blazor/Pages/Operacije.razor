@@ -1,0 +1,53 @@
+@page "/Operacije"
+
+<PageTitle>Operacije</PageTitle>
+
+<h1>Operacije</h1>
+
+
+<div>
+    <button type="button" class="btn btn-warning" @onclick="Plus2">Plus2</button>
+    <button type="button" class="btn btn-danger" @onclick="Multiply2">Multiply2</button>
+    <button type="button" class="btn btn-primary" @onclick="Minus2">Minus2</button>
+</div>
+
+
+<div class = "container p-1 border">
+    <pre>
+        @message
+    </pre>
+</div>    
+
+@code {
+
+private int number = 7;
+private string message = "7";
+private string comparisonResult = "das";
+
+private void Plus2(){
+    number +=2;
+    message += "\n" + number;
+    if(number<100){
+        comparisonResult = number + "Less than 100!";
+    }
+    if(number>100){
+        comparisonResult = number + "Greater than 100!";
+    }
+
+}
+
+private void Multiply2(){
+number *=2;
+message += "\n" + number;
+
+}
+
+private void Minus2(){
+number -=2;
+message += "\n" + number;
+
+
+}
+
+
+}
